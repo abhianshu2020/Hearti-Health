@@ -3,7 +3,7 @@ import { HttpHeaders, HttpClient, HttpParams, HttpEvent } from '@angular/common/
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HealthPredictorApiService {
 
