@@ -10,4 +10,5 @@
 
 export const environment = {
   production: false,
+  heartiHealthUrl : 'https://culturewerkz-scorecard.pratian.com/'
 };

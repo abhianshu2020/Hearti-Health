@@ -1,0 +1,34 @@
+
+   [
+         {
+             "TimeStamp" :"Jan",
+             "Predicted" : 102,
+             "Cured" :33
+         },
+         {
+            "TimeStamp" :"Feb",
+            "Predicted" : 23,
+            "Cured" :3
+        },
+        {
+            "TimeStamp" :"Mar",
+            "Predicted" : 56,
+            "Cured" :6
+        },
+        {
+            "TimeStamp" :"Apr",
+            "Predicted" : 74,
+            "Cured" :7
+        },
+        {
+            "TimeStamp" :"May",
+            "Predicted" : 90,
+            "Cured" :34
+        }        
+            
+             
+        
+         
+     ]
+ 
+    

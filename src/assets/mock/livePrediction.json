@@ -1,0 +1,59 @@
+{
+   "LivePredictions" : [
+        {
+            "SymptomType" : "Chest Pain",
+            "TodaysPrediction" : 120,
+            "Predictions" :[
+                {
+                    "TimeStamp": "2020-01-01 12:23:00",
+                    "Count" :1
+                },
+                {
+                    "TimeStamp": "2020-01-01 12:43:00",
+                    "Count" :1
+                },
+                {
+                    "TimeStamp": "2020-01-01 12:57:00",
+                    "Count" :1
+                }
+            ]
+        },
+        {
+            "SymptomType" : "Blood Pressure",
+            "TodaysPrediction" : 21,
+            "Predictions" :[
+                {
+                    "TimeStamp": "2020-01-01 13:23:00",
+                    "Count" :1
+                },
+                {
+                    "TimeStamp": "2020-01-01 14:43:00",
+                    "Count" :1
+                },
+                {
+                    "TimeStamp": "2020-01-01 13:57:00",
+                    "Count" :1
+                }
+            ]
+        },
+        {
+            "SymptomType" : "cholesterol",
+            "TodaysPrediction" : 43,
+            "Predictions" :[
+                {
+                    "TimeStamp": "2020-01-01 12:13:00",
+                    "Count" :1
+                },
+                {
+                    "TimeStamp": "2020-01-01 12:23:00",
+                    "Count" :1
+                },
+                {
+                    "TimeStamp": "2020-01-01 12:37:00",
+                    "Count" :1
+                }
+            ]
+        }
+    ]
+}
+  

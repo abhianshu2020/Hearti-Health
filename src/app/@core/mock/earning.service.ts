@@ -1,28 +1,59 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf, Observable } from 'rxjs';
 import { LiveUpdateChart, PieChart, EarningData } from '../data/earning';
+import { LivePrediction } from '../data/live-prediction';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class EarningService extends EarningData {
+//export class EarningService extends EarningData {
+  
+  // //private LivePredictions: LivePrediction[];
+  // private http: HttpClient;
+  // getDLiveChartData() {
+  //   this.currentDate = new Date();
+  //   this.currentValue = Math.random() * 1000;  
+    
+
+  //   return this.http.get<LivePrediction[]>(`${environment.heartiHealthUrl}/api/TeamManager/GetUserLowerLevelTeamHierarchy?AccountCode=lob000001&BusinessModuleCode=bm0000001&UUID=00`);
+
+  // }
 
   private currentDate: Date = new Date();
   private currentValue = Math.random() * 1000;
   private ONE_DAY = 24 * 3600 * 1000;
 
+  // private pieChartData = [
+  //   {
+  //     value: 50,
+  //     name: 'Bitcoin',
+  //   },
+  //   {
+  //     value: 25,
+  //     name: 'Tether',
+  //   },
+  //   {
+  //     value: 25,
+  //     name: 'Ethereum',
+  //   },
+  // ];
+
+  
   private pieChartData = [
     {
       value: 50,
-      name: 'Bitcoin',
+      name: 'Chest Pain',
     },
     {
       value: 25,
-      name: 'Tether',
+      name: 'Blood Pressure',
     },
     {
       value: 25,
-      name: 'Ethereum',
+      name: 'cholesterol',
     },
-  ];
+  ]
 
   private liveUpdateChartData = {
     bitcoin: {
@@ -55,8 +86,10 @@ export class EarningService extends EarningData {
     this.currentDate = new Date();
     this.currentValue = Math.random() * 1000;
 
-    return Array.from(Array(elementsNumber))
-      .map(item => this.generateRandomLiveChartData());
+    var a=Array.from(Array(elementsNumber))
+    .map(item => this.generateRandomLiveChartData());
+
+    return a;
   }
 
   generateRandomLiveChartData() {
