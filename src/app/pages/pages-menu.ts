@@ -8,7 +8,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'health-predictor',
+    title: 'Health Predictor',
     icon: 'heart-outline',
     link: '/pages/health-predictor',
   },

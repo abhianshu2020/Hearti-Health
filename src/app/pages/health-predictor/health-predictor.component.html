@@ -35,126 +35,133 @@
   }
 </style>
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-<nb-card>
-  <nb-card-header>Heart Attack Predictor</nb-card-header>
-  <nb-card-body>
-
-    <div class="row">
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="age" class="label">Age</label>
-          <input type="text" nbInput fullWidth placeholder="Eg: 32"  formControlName="age">
-          <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
-            <div *ngIf="f.age.errors.required">Age is required</div>
+  <nb-card>
+    <nb-card-header>
+      <div>
+        <div>
+          <h2 style="color:#5781ff;">Heart Attack Predictor</h2>
         </div>
+      </div>
+    </nb-card-header>
+    <nb-card-body>
+
+      <div class="row">
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="age" class="label">Age</label>
+            <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
+            <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+              <div *ngIf="f.age.errors.required">Age is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="sex" class="label block-label">Gender</label>
+            <nb-radio-group name="sex">
+              <nb-radio value="male">Male</nb-radio>
+              <nb-radio value="female">Female</nb-radio>
+            </nb-radio-group>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="cp" class="label block-label">Do you experience Chest Pain?</label>
+            <nb-radio-group name="cp">
+              <nb-radio value="yes">Yes</nb-radio>
+              <nb-radio value="no">No</nb-radio>
+            </nb-radio-group>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="trestbps" class="label">Blood Pressure Level</label>
+            <input type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="trestbps">
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="sex" class="label block-label">Gender</label>
-          <nb-radio-group name="sex">
-            <nb-radio value="male">Male</nb-radio>
-            <nb-radio value="female">Female</nb-radio>
-          </nb-radio-group>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="chol" class="label">Cholesterol Level</label>
+            <input type="text" nbInput fullWidth placeholder="Ex: 323" formControlName="chol">
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="fbs" class="label">Fasting Blood Sugar Level</label>
+            <input type="text" nbInput fullWidth placeholder="Text field" formControlName="fbs">
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="" class="label">Resting Electrocardiographic</label>
+            <input type="text" nbInput fullWidth placeholder="restecg" formControlName="restecg">
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="" class="label">Maximum Heart Rate Achieved</label>
+            <input type="text" nbInput fullWidth placeholder="thalach" formControlName="thalach">
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="cp" class="label block-label">Do you experience Chest Pain?</label>
-          <nb-radio-group name="cp">
-            <nb-radio value="yes">Yes</nb-radio>
-            <nb-radio value="no">No</nb-radio>
-          </nb-radio-group>
+      <div class="row">
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="exang" class="label block-label">Excercise includes Angina</label>
+            <nb-radio-group name="exang">
+              <nb-radio value="yes">Yes</nb-radio>
+              <nb-radio value="no">No</nb-radio>
+            </nb-radio-group>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="oldpeak" class="label">Depression induced by exercise</label>
+            <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak">
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="slope" class="label">Slope of the peak exercise</label>
+            <input type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope">
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="ca" class="label">Vessels colored by flouoroscopy</label>
+            <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca">
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="trestbps" class="label">Blood Pressure Level</label>
-          <input type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="trestbps">
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="chol" class="label">Cholesterol Level</label>
-          <input type="text" nbInput fullWidth placeholder="Ex: 323" formControlName="chol">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label for="thal" class="label">Thalassemia Level</label>
+            <input type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect"
+              formControlName="thal">
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="fbs" class="label">Fasting Blood Sugar Level</label>
-          <input type="text" nbInput fullWidth placeholder="Text field" formControlName="fbs">
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="" class="label">Resting Electrocardiographic</label>
-          <input type="text" nbInput fullWidth placeholder="restecg" formControlName="restecg">
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="" class="label">Maximum Heart Rate Achieved</label>
-          <input type="text" nbInput fullWidth placeholder="thalach" formControlName="thalach">
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="exang" class="label block-label">Excercise includes Angina</label>
-          <nb-radio-group name="exang">
-            <nb-radio value="yes">Yes</nb-radio>
-            <nb-radio value="no">No</nb-radio>
-          </nb-radio-group>
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="oldpeak" class="label">Depression induced by exercise</label>
-          <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak">
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="slope" class="label">Slope of the peak exercise</label>
-          <input type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope">
-        </div>
-      </div>
-
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="ca" class="label">Vessels colored by flouoroscopy</label>
-          <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca">
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="form-group">
-          <label for="thal" class="label">Thalassemia Level</label>
-          <input type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect" formControlName="thal">
-        </div>
-      </div>
-    </div>
-
-  </nb-card-body>
-  <nb-card-footer>
-    <button nbButton size="medium" shape="semi-round">Calculate</button>
-  </nb-card-footer>
-</nb-card>
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton size="medium" shape="semi-round">Calculate</button>
+    </nb-card-footer>
+  </nb-card>
 </form>

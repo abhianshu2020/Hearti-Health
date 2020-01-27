@@ -7,3 +7,7 @@
     padding-top: nb-theme(layout-padding-top);
   }
 }
+
+[override] .ngx-footer nav {
+  padding: 0 1.25rem !important;
+}
