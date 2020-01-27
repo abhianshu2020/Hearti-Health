@@ -11,6 +11,8 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,15 +22,40 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { PLoginComponent } from './auth/p-login/p-login.component';
+import { PRegisterComponent } from './auth/p-register/p-register.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PLoginComponent, PRegisterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+          baseEndpoint: 'http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api',
+              login: {
+                // ...
+                endpoint: '/User',
+                redirect: {
+                  success: '/page/',
+                  failure: null,
+                },
+              },
+              register: {
+                // ...
+                endpoint: '/api/auth/register',
+              },
+               logout: {
+                endpoint: '/auth/sign-out',
+              },
+        }),
+      ],
+      forms: {},
+    }), 
     ThemeModule.forRoot(),
 
     NbSidebarModule.forRoot(),

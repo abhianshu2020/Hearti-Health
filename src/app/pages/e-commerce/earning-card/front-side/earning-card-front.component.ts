@@ -15,7 +15,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   @Input() selectedCurrency: string = 'Chest Pain';
 
   intervalSubscription: Subscription;
-  currencies: string[] = ['Chest Pain', 'Blood Pressure', 'Cholesterol'];
+  currencies: string[] = ['Chest Pain', 'Blood Sugar', 'Cholesterol'];
   currentTheme: string;
   earningLiveUpdateCardData: LiveUpdateChart;
   liveUpdateChartData: { value: [string, number] }[];

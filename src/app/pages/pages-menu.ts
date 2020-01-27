@@ -10,7 +10,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Health Predictor',
     icon: 'heart-outline',
-    link: '/pages/forms',
+    link: '/pages/health-predictor',
   },
   {
     title: 'Settings',
