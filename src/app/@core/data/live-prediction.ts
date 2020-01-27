@@ -6,5 +6,6 @@ export class LivePrediction {
 
 export class Predictions{
     TimeStamp: Date;
+    
     Count : number;
 }  

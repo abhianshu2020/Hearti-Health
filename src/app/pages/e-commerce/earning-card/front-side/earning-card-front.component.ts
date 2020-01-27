@@ -12,10 +12,10 @@ import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning';
 export class EarningCardFrontComponent implements OnDestroy, OnInit {
   private alive = true;
 
-  @Input() selectedCurrency: string = 'Bitcoin';
+  @Input() selectedCurrency: string = 'Chest Pain';
 
   intervalSubscription: Subscription;
-  currencies: string[] = ['Bitcoin', 'Tether', 'Ethereum'];
+  currencies: string[] = ['Chest Pain', 'Blood Pressure', 'Cholesterol'];
   currentTheme: string;
   earningLiveUpdateCardData: LiveUpdateChart;
   liveUpdateChartData: { value: [string, number] }[];
@@ -41,6 +41,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
     }
   }
 
+
   private getEarningCardData(currency) {
     this.earningService.getEarningCardData(currency)
       .pipe(takeWhile(() => this.alive))
@@ -51,6 +52,16 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
         this.startReceivingLiveData(currency);
       });
   }
+  // private getEarningCardData(currency) {
+  //   this.earningService.getEarningCardData(currency)
+  //     .pipe(takeWhile(() => this.alive))
+  //     .subscribe((earningLiveUpdateCardData: LiveUpdateChart) => {
+  //       this.earningLiveUpdateCardData = earningLiveUpdateCardData;
+  //       this.liveUpdateChartData = earningLiveUpdateCardData.liveChart;
+
+  //       this.startReceivingLiveData(currency);
+  //     });
+  // }
 
   startReceivingLiveData(currency) {
     if (this.intervalSubscription) {

@@ -11,7 +11,7 @@ import *  as  HeartAttackPredictor from './heartAttackCounter.json';
 @Injectable()
 export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData {
 
-  private HeartAttackCounter: any;
+  private HeartAttackCounter: HeartAttackCounter[];
   private data: any;
 
   constructor(private http: HttpClient) {
@@ -35,7 +35,10 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     //this.HeartAttackCounter= HeartAttackPredictor;
     //this.HeartAttackCounter = DummyJSON;
     return observableOf((HeartAttackPredictor as any).default);
-    // return this.http.get<HeartAttackCounter[]>(`${environment.heartiHealthUrl}/api/TeamManager/GetUserLowerLevelTeamHierarchy?AccountCode=lob000001&BusinessModuleCode=bm0000001&UUID=00`);
+    //var a=this.http.get<HeartAttackCounter[]>(`${environment.heartiHealthUrl}`);
+   //return a;
+
+    //return this.http.get<HeartAttackCounter[]>(`${environment.heartiHealthUrl}/api/TeamManager/GetUserLowerLevelTeamHierarchy?AccountCode=lob000001&BusinessModuleCode=bm0000001&UUID=00`);
   }
 
   getDataForFirstLine(): number[] {
@@ -45,7 +48,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     //Write the code to get predicted value from our object
     let firstLinedata: number[] = [];
     for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-      firstLinedata[i] = this.HeartAttackCounter[i].Predicted;
+      firstLinedata[i] = this.HeartAttackCounter[i].predicted;
     }
 
     return firstLinedata;

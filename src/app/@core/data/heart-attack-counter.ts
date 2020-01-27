@@ -1,6 +1,6 @@
 export interface HeartAttackCounter {
-    TimeStamp: string;
-    Predicted: number;
-    Cured :number;
+    interval: string;
+    predicted: number;
+    cured :number;
    }
  

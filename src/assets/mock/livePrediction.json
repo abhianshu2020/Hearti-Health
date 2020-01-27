@@ -8,6 +8,7 @@
                     "TimeStamp": "2020-01-01 12:23:00",
                     "Count" :1
                 },
+
                 {
                     "TimeStamp": "2020-01-01 12:43:00",
                     "Count" :1
@@ -37,7 +38,7 @@
             ]
         },
         {
-            "SymptomType" : "cholesterol",
+            "SymptomType" : "Cholesterol",
             "TodaysPrediction" : 43,
             "Predictions" :[
                 {

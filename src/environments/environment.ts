@@ -10,5 +10,5 @@
 
 export const environment = {
   production: false,
-  heartiHealthUrl : 'https://culturewerkz-scorecard.pratian.com/'
+  heartiHealthUrl : 'http://172.30.13.61:8080/intervalReport/weeklyReport/'
 };
