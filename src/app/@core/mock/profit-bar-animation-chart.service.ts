@@ -5,7 +5,7 @@ import { HeartAttackCounter } from '../data/heart-attack-counter';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import *  as  HeartAttackPredictor from './heartAttackCounter.json';
+import * as HeartAttackPredictor from './heartAttackCounter.json';
 
 
 @Injectable()
@@ -23,8 +23,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
           firstLine: this.getDataForFirstLine(),
           secondLine: this.getDataForSecondLine(),
         };
-      })
-    
+      });    
   }
   ngOnInit() {
    

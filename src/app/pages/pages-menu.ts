@@ -17,6 +17,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'settings-2-outline',
     link: '/pages/iot-dashboard',
   },
+  {
+    title: 'Result 1',
+    icon: 'settings-2-outline',
+    link: '/pages/health-predictor-result',
+  },
   // {
   //   title: 'FEATURES',
   //   group: true,

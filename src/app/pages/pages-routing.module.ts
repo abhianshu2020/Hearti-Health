@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
+import { HealthPredictorResultComponent } from './health-predictor-result/health-predictor-result.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,10 @@ const routes: Routes = [{
     {
       path: 'health-predictor',
       component: HealthPredictorComponent,
+    },
+    {
+      path: 'health-predictor-result',
+      component: HealthPredictorResultComponent,
     },
     {
       path: 'layout',

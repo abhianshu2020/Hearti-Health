@@ -12,7 +12,7 @@ import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning';
 export class EarningCardFrontComponent implements OnDestroy, OnInit {
   private alive = true;
 
-  @Input() selectedCurrency: string = 'Chest Pain';
+  @Input() selectedCurrency: string = 'bitcoin';
 
   intervalSubscription: Subscription;
   currencies: string[] = ['Chest Pain', 'Blood Sugar', 'Cholesterol'];
