@@ -3,6 +3,7 @@ import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/
 import { NbThemeService } from '@nebular/theme';
 import { LayoutService } from '../../../../@core/utils/layout.service';
 import { symptomPrediction } from '../../../../@core/data/symptomPrediction';
+import { SymptomPredictonMapper } from '../../../../@core/data/symptomPredictionMapper';
 
 @Component({
   selector: 'ngx-earning-live-update-chart',
@@ -18,7 +19,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   private alive = true;
 
   //@Input() liveUpdateChartData: { value: [string, number] }[];
-  @Input() liveUpdateChartData: symptomPrediction[];
+  @Input() liveUpdateChartData: SymptomPredictonMapper[];
   option: any;
   echartsInstance;
 
@@ -141,7 +142,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
     };
   }
 
-  updateChartOptions(chartData: symptomPrediction[]) {
+  updateChartOptions(chartData: SymptomPredictonMapper[]) {
     this.echartsInstance.setOption({
       series: [{
         data: chartData,

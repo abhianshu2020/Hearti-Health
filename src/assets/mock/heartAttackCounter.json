@@ -24,7 +24,22 @@
        "interval" :"May",
        "predicted" : 90,
        "cured" :34
-   }        
+   }   ,
+   {
+    "interval" :"june",
+    "predicted" : 160,
+    "cured" :340
+},
+{
+    "interval" :"july",
+    "predicted" : 50,
+    "cured" :34
+}    ,
+{
+    "interval" :"july",
+    "predicted" : 100,
+    "cured" :64
+}   
        
         
    

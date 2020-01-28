@@ -9,37 +9,67 @@
             "up": true,
             "symptomPrediction" :[
                 {
-                    "timeStamp": "2020-01-01",
-                    "symptomValue" :1
+                    "timeStamp": "2020-01-01 18:34:44 00:00",
+                    "symptomValue" :34
                 },
 
                 {
                     "timeStamp": "2020-01-02",
-                    "symptomValue" :1
+                    "symptomValue" :22
                 },
                 {
                     "timeStamp": "2020-01-03",
-                    "symptomValue" :1
+                    "symptomValue" :56
+                },
+
+                {
+                    "timeStamp": "2020-01-05",
+                    "symptomValue" :22
+                },
+                {
+                    "timeStamp": "2020-01-06",
+                    "symptomValue" :56
+                },
+                {
+                    "timeStamp": "2020-01-07",
+                    "symptomValue" :22
+                },
+                {
+                    "timeStamp": "2020-01-08",
+                    "symptomValue" :56
+                },
+                {
+                    "timeStamp": "2020-01-09",
+                    "symptomValue" :90
+                },
+                {
+                    "timeStamp": "2020-01-10",
+                    "symptomValue" :22
+                },
+                {
+                    "timeStamp": "2020-01-11",
+                    "symptomValue" :56
                 }
             ]
+            
         },
         {
             "symptomType" : "BloodSugar",
             "todayPredictionsymptomValue" : 21,
-            "variation" : 4 ,
-            "up": true,
+            "variation" : 6 ,
+            "up": false,
             "symptomPrediction" :[
                 {
                     "timeStamp": "2020-01-01",
-                    "symptomValue" :1
+                    "symptomValue" :14
                 },
                 {
-                    "timeStamp": "2020-01-02",
-                    "symptomValue" :1
+                    "timeStamp": "2020-03-02",
+                    "symptomValue" :189
                 },
                 {
-                    "timeStamp": "2020-01-03",
-                    "symptomValue" :1
+                    "timeStamp": "2020-03-03",
+                    "symptomValue" :90
                 }
             ]
         },

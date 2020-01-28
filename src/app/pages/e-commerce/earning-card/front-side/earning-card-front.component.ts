@@ -5,6 +5,7 @@ import { switchMap, takeWhile } from 'rxjs/operators';
 import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning';
 import { LivePrediction } from '../../../../@core/data/live-prediction';
 import { symptomPrediction } from '../../../../@core/data/symptomPrediction';
+import { SymptomPredictonMapper } from '../../../../@core/data/symptomPredictionMapper';
 
 @Component({
   selector: 'ngx-earning-card-front',
@@ -19,11 +20,14 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   intervalSubscription: Subscription;
   currencies: string[] = ['ChestPain', 'BloodSugar', 'Cholesterol'];
   currentTheme: string;
-  earningLiveUpdateCardData : LivePrediction;
+  predictionLiveUpdateCardData : LivePrediction;
  // earningLiveUpdateCardData: LiveUpdateChart;
   //liveUpdateChartData: { value: [string, number] }[];
-  liveUpdateChartData : symptomPrediction[];
-  //EarningLiveUpdateCardData
+  liveUpdateChartData : SymptomPredictonMapper[] =[];
+ 
+  //liveUpdateChartData : symptomPrediction[];
+  
+
 
   constructor(private themeService: NbThemeService,
               private earningService: EarningData) {
@@ -50,12 +54,33 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   private getEarningCardData(currency) {
     this.earningService.getEarningCardData(currency)
       .pipe(takeWhile(() => this.alive))
-      .subscribe((earningLiveUpdateCardData: LivePrediction ) => {
-        this.earningLiveUpdateCardData = earningLiveUpdateCardData;
-        this.liveUpdateChartData = earningLiveUpdateCardData.symptomPrediction;
+      .subscribe((predictionLiveUpdateCardData: LivePrediction ) => {
+        this.predictionLiveUpdateCardData = predictionLiveUpdateCardData;
+      this.mapSymptomPredictionMapper(predictionLiveUpdateCardData.symptomPrediction);
+      //  for(let i=0;i<this.earningLiveUpdateCardData.symptomPrediction.length;i++)
+      //  {        
+      //     this.liveUpdateChartData[i].symptomPredictons[0]=this.earningLiveUpdateCardData.symptomPrediction[i].timeStamp;
+      //     this.liveUpdateChartData[i].symptomPredictons[1]=this.earningLiveUpdateCardData.symptomPrediction[i].symptomValue;
+       
+      //   }
+
+       
+     
+       // this.liveUpdateChartData = earningLiveUpdateCardData.symptomPrediction;
 
        // this.startReceivingLiveData(currency);
       });
+  }
+
+   private mapSymptomPredictionMapper(symptomPredictions :symptomPrediction[])
+   {
+
+    for(let i=0;i<symptomPredictions.length;i++)
+     {     
+     this.liveUpdateChartData.push({value: [symptomPredictions[i].timeStamp,
+      symptomPredictions[i].symptomValue]});  
+    }
+  
   }
   // private getEarningCardData(currency) {
   //   this.earningService.getEarningCardData(currency)

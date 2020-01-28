@@ -37,10 +37,10 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
 
  
 
-    //return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/intervalReport/weeklyreport/");
+    // return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/intervalReport/weeklyreport/");
    
 
-    //return this.http.get<HeartAttackCounter[]>(`${environment.heartiHealthUrl}/api/TeamManager/GetUserLowerLevelTeamHierarchy?AccountCode=lob000001&BusinessModuleCode=bm0000001&UUID=00`);
+   
   }
 
   getDataForFirstLine(): number[] {   
