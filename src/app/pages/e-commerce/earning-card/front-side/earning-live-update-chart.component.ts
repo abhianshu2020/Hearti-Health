@@ -102,7 +102,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
         backgroundColor: earningLineTheme.tooltipBg,
         borderColor: earningLineTheme.tooltipBorderColor,
         borderWidth: earningLineTheme.tooltipBorderWidth,
-        formatter: params => `$ ${Math.round(parseInt(params.value[1], 10))}`,
+        formatter: params => ` ${Math.round(parseInt(params.value[1], 10))}`,
         extraCssText: earningLineTheme.tooltipExtraCss,
       },
       series: [
