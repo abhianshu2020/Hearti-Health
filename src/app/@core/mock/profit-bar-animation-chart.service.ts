@@ -5,7 +5,7 @@ import { HeartAttackCounter } from '../data/heart-attack-counter';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import *  as  HeartAttackPredictor from './heartAttackCounter.json';
+import *  as  HeartAttackPredictor from '../../../assets/mock/heartAttackCounter.json';
 
 
 @Injectable()
@@ -35,15 +35,16 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     //this.HeartAttackCounter= HeartAttackPredictor;
     //this.HeartAttackCounter = DummyJSON;
     return observableOf((HeartAttackPredictor as any).default);
-    //var a=this.http.get<HeartAttackCounter[]>(`${environment.heartiHealthUrl}`);
-   //return a;
+
+ 
+
+    //return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/intervalReport/weeklyreport/");
+   
 
     //return this.http.get<HeartAttackCounter[]>(`${environment.heartiHealthUrl}/api/TeamManager/GetUserLowerLevelTeamHierarchy?AccountCode=lob000001&BusinessModuleCode=bm0000001&UUID=00`);
   }
 
-  getDataForFirstLine(): number[] {
-
-    // this.getDataForHeartAttackCounter();
+  getDataForFirstLine(): number[] {   
 
     //Write the code to get predicted value from our object
     let firstLinedata: number[] = [];
@@ -65,7 +66,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     //Write the code to get predicted value from our object
     let secondLinedata: number[] = [];
     for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-      var a = this.HeartAttackCounter.length;
+      
       secondLinedata[i] = this.HeartAttackCounter[i].cured;
     }
 

@@ -1,29 +1,29 @@
 
    [
          {
-             "TimeStamp" :"Jan",
-             "Predicted" : 102,
-             "Cured" :33
+             "interval" :"Jan",
+             "predicted" : 102,
+             "cured" :33
          },
          {
-            "TimeStamp" :"Feb",
-            "Predicted" : 23,
-            "Cured" :3
+            "interval" :"Feb",
+            "predicted" : 23,
+            "cured" :3
         },
         {
-            "TimeStamp" :"Mar",
-            "Predicted" : 56,
-            "Cured" :6
+            "interval" :"Mar",
+            "predicted" : 56,
+            "cured" :6
         },
         {
-            "TimeStamp" :"Apr",
-            "Predicted" : 74,
-            "Cured" :7
+            "interval" :"Apr",
+            "predicted" : 74,
+            "cured" :7
         },
         {
-            "TimeStamp" :"May",
-            "Predicted" : 90,
-            "Cured" :34
+            "interval" :"May",
+            "predicted" : 90,
+            "cured" :34
         }        
             
              

@@ -10,5 +10,5 @@
 
 export const environment = {
   production: false,
-  heartiHealthUrl : 'http://172.30.13.61:8080/intervalReport/weeklyReport/'
+  heartiHealthUrl : 'http://172.30.12.171:8083/intervalReport/weeklyreport/'
 };

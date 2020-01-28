@@ -1,11 +1,15 @@
+import { symptomPrediction } from './symptomPrediction';
+
 export class LivePrediction {
-   SymptomType: string;
-   TodaysPrediction: number;
-   Predictions :Predictions[];
+  symptomType: string;
+  todayPredictionsymptomValue: number;
+  up: boolean;
+  symptomPrediction :symptomPrediction[];
   }
 
-export class Predictions{
-    TimeStamp: Date;
+// export class symptomPrediction{
+//      timeStamp: string;
     
-    Count : number;
-}  
+//     symptomValue : number;
+// }  
+

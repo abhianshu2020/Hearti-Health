@@ -3,6 +3,8 @@ import { NbThemeService } from '@nebular/theme';
 import { interval , Subscription } from 'rxjs';
 import { switchMap, takeWhile } from 'rxjs/operators';
 import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning';
+import { LivePrediction } from '../../../../@core/data/live-prediction';
+import { symptomPrediction } from '../../../../@core/data/symptomPrediction';
 
 @Component({
   selector: 'ngx-earning-card-front',
@@ -12,13 +14,16 @@ import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning';
 export class EarningCardFrontComponent implements OnDestroy, OnInit {
   private alive = true;
 
-  @Input() selectedCurrency: string = 'Chest Pain';
+  @Input() selectedCurrency: string = 'ChestPain';
 
   intervalSubscription: Subscription;
-  currencies: string[] = ['Chest Pain', 'Blood Sugar', 'Cholesterol'];
+  currencies: string[] = ['ChestPain', 'BloodSugar', 'Cholesterol'];
   currentTheme: string;
-  earningLiveUpdateCardData: LiveUpdateChart;
-  liveUpdateChartData: { value: [string, number] }[];
+  earningLiveUpdateCardData : LivePrediction;
+ // earningLiveUpdateCardData: LiveUpdateChart;
+  //liveUpdateChartData: { value: [string, number] }[];
+  liveUpdateChartData : symptomPrediction[];
+  //EarningLiveUpdateCardData
 
   constructor(private themeService: NbThemeService,
               private earningService: EarningData) {
@@ -45,11 +50,11 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   private getEarningCardData(currency) {
     this.earningService.getEarningCardData(currency)
       .pipe(takeWhile(() => this.alive))
-      .subscribe((earningLiveUpdateCardData: LiveUpdateChart) => {
+      .subscribe((earningLiveUpdateCardData: LivePrediction ) => {
         this.earningLiveUpdateCardData = earningLiveUpdateCardData;
-        this.liveUpdateChartData = earningLiveUpdateCardData.liveChart;
+        this.liveUpdateChartData = earningLiveUpdateCardData.symptomPrediction;
 
-        this.startReceivingLiveData(currency);
+       // this.startReceivingLiveData(currency);
       });
   }
   // private getEarningCardData(currency) {

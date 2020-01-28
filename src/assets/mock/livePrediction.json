@@ -1,60 +1,67 @@
-{
-   "LivePredictions" : [
+
+
+    
+[
         {
-            "SymptomType" : "Chest Pain",
-            "TodaysPrediction" : 120,
-            "Predictions" :[
+            "symptomType" : "ChestPain",
+            "todayPredictionsymptomValue" : 120,
+            "variation" : 4 ,
+            "up": true,
+            "symptomPrediction" :[
                 {
-                    "TimeStamp": "2020-01-01 12:23:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-01",
+                    "symptomValue" :1
                 },
 
                 {
-                    "TimeStamp": "2020-01-01 12:43:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-02",
+                    "symptomValue" :1
                 },
                 {
-                    "TimeStamp": "2020-01-01 12:57:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-03",
+                    "symptomValue" :1
                 }
             ]
         },
         {
-            "SymptomType" : "Blood Pressure",
-            "TodaysPrediction" : 21,
-            "Predictions" :[
+            "symptomType" : "BloodSugar",
+            "todayPredictionsymptomValue" : 21,
+            "variation" : 4 ,
+            "up": true,
+            "symptomPrediction" :[
                 {
-                    "TimeStamp": "2020-01-01 13:23:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-01",
+                    "symptomValue" :1
                 },
                 {
-                    "TimeStamp": "2020-01-01 14:43:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-02",
+                    "symptomValue" :1
                 },
                 {
-                    "TimeStamp": "2020-01-01 13:57:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-03",
+                    "symptomValue" :1
                 }
             ]
         },
         {
-            "SymptomType" : "Cholesterol",
-            "TodaysPrediction" : 43,
-            "Predictions" :[
+            "symptomType" : "Cholesterol",
+            "todayPredictionsymptomValue" : 43,
+            "variation" : 4 ,
+            "up": true,
+            "symptomPrediction" :[
                 {
-                    "TimeStamp": "2020-01-01 12:13:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-01",
+                    "symptomValue" :1
                 },
                 {
-                    "TimeStamp": "2020-01-01 12:23:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-02",
+                    "symptomValue" :1
                 },
                 {
-                    "TimeStamp": "2020-01-01 12:37:00",
-                    "Count" :1
+                    "timeStamp": "2020-01-03",
+                    "symptomValue" :1
                 }
             ]
         }
     ]
-}
-  
+
