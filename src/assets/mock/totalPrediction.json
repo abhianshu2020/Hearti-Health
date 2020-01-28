@@ -1,0 +1,52 @@
+[ 
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Mon" ,
+        "variation": 10,
+        "up" : true
+    } ,
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Tues" ,
+        "variation": 10,
+        "up" : true
+    } ,
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Wed" ,
+        "variation": 10,
+        "up" : true
+    },
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Thurs" ,
+        "variation": 10,
+        "up" : true
+    },
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Fri" ,
+        "variation": 10,
+        "up" : true
+    },
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Sat" ,
+        "variation": 10,
+        "up" : true
+    },
+    {
+        "ageBelowThirty": true, 
+        "male": true, 
+        "interval": "Sun" ,
+        "variation": 10,
+        "up" : true
+    }
+
+]
