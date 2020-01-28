@@ -14,15 +14,15 @@ export class EarningCardBackComponent implements OnDestroy {
   name: string;
   color: string;
   value: number;
-  defaultSelectedCurrency: string = 'Chest Pain';
+  defaultSelectedCurrency: string = 'ChestPain';
 
-  constructor(private earningService: EarningData ) {
-    this.earningService.getEarningPieChartData()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((earningPieChartData) => {
-        this.earningPieChartData = earningPieChartData;
-      });
-  }
+  // constructor(private earningService: EarningData ) {
+  //   this.earningService.getEarningPieChartData()
+  //     .pipe(takeWhile(() => this.alive))
+  //     .subscribe((earningPieChartData) => {
+  //       this.earningPieChartData = earningPieChartData;
+  //     });
+  // }
 
   changeChartInfo(pieData: {value: number; name: string; color: any}) {
     this.value = pieData.value;

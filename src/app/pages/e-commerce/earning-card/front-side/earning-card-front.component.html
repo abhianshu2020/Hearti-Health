@@ -6,18 +6,18 @@
 <nb-card-body>
   <div class="chart-info">
     <div>Today's Prediction</div>
-    <div class="h6">{{ earningLiveUpdateCardData.dailyIncome | ngxNumberWithCommas }}</div>
+    <div class="h6">{{ earningLiveUpdateCardData.todayPredictionsymptomValue | ngxNumberWithCommas }}</div>
     <div class="delta"
-         [class.up]="earningLiveUpdateCardData.delta.up"
-         [class.down]="!earningLiveUpdateCardData.delta.up">
-      <nb-icon [icon]="earningLiveUpdateCardData.delta.up ? 'arrow-up' : 'arrow-down'"
+         [class.up]="earningLiveUpdateCardData.up"
+         [class.down]="!earningLiveUpdateCardData.up">
+      <nb-icon [icon]="earningLiveUpdateCardData.up ? 'arrow-up' : 'arrow-down'"
                pack="eva"
                class="direction">
       </nb-icon>
-      {{ earningLiveUpdateCardData.delta.value }}%
+      {{ earningLiveUpdateCardData.variation }}%
     </div>
   </div>
   <ngx-earning-live-update-chart
-    [liveUpdateChartData]="liveUpdateChartData">
+    [liveUpdateChartData]="earningLiveUpdateCardData.symptomPrediction">
   </ngx-earning-live-update-chart>
 </nb-card-body>

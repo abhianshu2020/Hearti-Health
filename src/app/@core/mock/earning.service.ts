@@ -3,41 +3,53 @@ import { of as observableOf, Observable } from 'rxjs';
 import { LiveUpdateChart, PieChart, EarningData } from '../data/earning';
 import { LivePrediction } from '../data/live-prediction';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import * as LivePredictions from '../../../assets/mock/livePrediction.json'
 
 @Injectable()
-export class EarningService extends EarningData {
+
+export class EarningService  {
 //export class EarningService extends EarningData {
+
+
   
-  // //private LivePredictions: LivePrediction[];
-  // private http: HttpClient;
-  // getDLiveChartData() {
-  //   this.currentDate = new Date();
-  //   this.currentValue = Math.random() * 1000;  
+  private LivePredictions: LivePrediction[];
+  private Predictions :any;
+
+  constructor(private http: HttpClient) {
+
+    this.getDataForHeartAttackCounter().subscribe(
+      res => {
+        this.LivePredictions = res;
+        this.Predictions = this.GetLiveRecords();
+        
+      })
     
+  }
 
-  //   return this.http.get<LivePrediction[]>(`${environment.heartiHealthUrl}/api/TeamManager/GetUserLowerLevelTeamHierarchy?AccountCode=lob000001&BusinessModuleCode=bm0000001&UUID=00`);
 
-  // }
+  getDataForHeartAttackCounter(): Observable<LivePrediction[]> {
 
-  private currentDate: Date = new Date();
-  private currentValue = Math.random() * 1000;
-  private ONE_DAY = 24 * 3600 * 1000;
+    //  this.HeartAttackCounter  = (HeartAttackPredictor as any).default;
+    //this.HeartAttackCounter= HeartAttackPredictor;
+    //this.HeartAttackCounter = DummyJSON;
+    return observableOf((LivePredictions as any).default);    
+  }
 
-  // private pieChartData = [
-  //   {
-  //     value: 50,
-  //     name: 'Bitcoin',
-  //   },
-  //   {
-  //     value: 25,
-  //     name: 'Tether',
-  //   },
-  //   {
-  //     value: 25,
-  //     name: 'Ethereum',
-  //   },
-  // ];
+  GetLiveRecords():Observable< LivePrediction[]>
+  {
+    return observableOf((LivePredictions as any).default);
+  }
+
+
+  getLiveRecordsbyType(type : string): LivePrediction
+  {    
+    var a =this.LivePredictions.filter((value) => value.symptomType.toLowerCase().includes(type.toLowerCase()));
+    return a[0];
+  }
+
+  // private currentDate: Date = new Date();
+  // private currentValue = Math.random() * 1000;
+  // private ONE_DAY = 24 * 3600 * 1000;
 
   
   private pieChartData = [
@@ -82,50 +94,62 @@ export class EarningService extends EarningData {
     },
   };
 
-  getDefaultLiveChartData(elementsNumber: number) {
-    this.currentDate = new Date();
-    this.currentValue = Math.random() * 1000;
+  // getDefaultLiveChartData(elementsNumber: number) {
+  //   //write the logic to fetch the data from Object
+  //   this.currentDate = new Date();
+  //   this.currentValue = Math.random() * 1000;
 
-    var a=Array.from(Array(elementsNumber))
-    .map(item => this.generateRandomLiveChartData());
+  //   var a=Array.from(Array(elementsNumber))
+  //   .map(item => this.generateRandomLiveChartData());
 
-    return a;
-  }
+  //   return a;
+  // }
 
-  generateRandomLiveChartData() {
-    this.currentDate = new Date(+this.currentDate + this.ONE_DAY);
-    this.currentValue = this.currentValue + Math.random() * 20 - 11;
+  // generateRandomLiveChartData() {
+  //   this.currentDate = new Date(+this.currentDate + this.ONE_DAY);
+  //   this.currentValue = this.currentValue + Math.random() * 20 - 11;
 
-    if (this.currentValue < 0) {
-      this.currentValue = Math.random() * 100;
-    }
+  //   if (this.currentValue < 0) {
+  //     this.currentValue = Math.random() * 100;
+  //   }
 
-    return {
-      value: [
-        [
-          this.currentDate.getFullYear(),
-          this.currentDate.getMonth(),
-          this.currentDate.getDate(),
-        ].join('/'),
-        Math.round(this.currentValue),
-      ],
-    };
-  }
+  //   return {
+  //     value: [
+  //       [
+  //         this.currentDate.getFullYear(),
+  //         this.currentDate.getMonth(),
+  //         this.currentDate.getDate(),
+  //       ].join('/'),
+  //       Math.round(this.currentValue),
+  //     ],
+  //   };
+  // }
 
-  getEarningLiveUpdateCardData(currency): Observable<any[]> {
-    const data = this.liveUpdateChartData[currency.toLowerCase()];
-    const newValue = this.generateRandomLiveChartData();
+  // getEarningLiveUpdateCardData(currency): Observable<any[]> {
+  //   const data = this.liveUpdateChartData[currency.toLowerCase()];
+  //   const newValue = this.generateRandomLiveChartData();
 
-    data.liveChart.shift();
-    data.liveChart.push(newValue);
+  //   data.liveChart.shift();
+  //   data.liveChart.push(newValue);
 
-    return observableOf(data.liveChart);
-  }
+  //   return observableOf(data.liveChart);
+  // }
 
-  getEarningCardData(currency: string): Observable<LiveUpdateChart> {
-    const data = this.liveUpdateChartData[currency.toLowerCase()];
+  getEarningCardData(currency: string): Observable<LivePrediction> {
+   // const data = this.liveUpdateChartData[currency.toLowerCase()];
 
-    data.liveChart = this.getDefaultLiveChartData(150);
+    const data=this.getLiveRecordsbyType(currency);
+
+
+//     let dataFormatter: {value: [string,number]}[];
+// for(let i: 0;i<data.symptomPrediction.length;i++){
+//      let value :[string,number];
+//      value[0]=data.symptomPrediction[i].timeStamp;
+//      value[1]=data.symptomPrediction[i].symptomValue;
+//      dataFormatter[i]=value;
+//}
+
+    //data.liveChart = this.getDefaultLiveChartData(150);
 
     return observableOf(data);
   }

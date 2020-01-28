@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs';
+import { LivePrediction } from './live-prediction';
 
 export interface LiveUpdateChart {
   liveChart: { value: [string, number] }[];
@@ -16,6 +17,6 @@ export interface PieChart {
 
 export abstract class EarningData {
   abstract getEarningLiveUpdateCardData(currency: string): Observable<any[]>;
-  abstract getEarningCardData(currency: string): Observable<LiveUpdateChart>;
+  abstract getEarningCardData(currency: string): Observable<LivePrediction>;
   abstract getEarningPieChartData(): Observable<PieChart[]>;
 }
