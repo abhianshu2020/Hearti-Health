@@ -19,7 +19,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: PLoginComponent,
+    component: NbAuthComponent,
+    children: [{
+      path: '',
+      component: PLoginComponent,
+    }
+    ]
   },
   {
     path: 'auth',
@@ -51,12 +56,13 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 
 const config: ExtraOptions = {
   useHash: false,
+  enableTracing: true,
 };
 
 @NgModule({

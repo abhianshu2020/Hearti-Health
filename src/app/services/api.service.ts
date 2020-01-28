@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient, HttpParams, HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams, HttpEvent } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class HealthPredictorApiService {
+export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,5 +22,13 @@ export class HealthPredictorApiService {
     withCredentials?: boolean;
   }): Observable<HttpEvent<T>> {
     return this.httpClient.post<T>(url, data, options);
+  }
+
+  get<T>(url: string) {
+    return this.httpClient.get(url);
+  }
+
+  put<T>(url: string, data: any){
+    return this.httpClient.put(url, data);
   }
 }

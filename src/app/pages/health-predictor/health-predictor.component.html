@@ -34,7 +34,7 @@
     display: inline;
   }
 </style>
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <nb-card>
     <nb-card-header>
       <div>
@@ -60,7 +60,7 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label for="sex" class="label block-label">Gender</label>
-            <nb-radio-group name="sex">
+            <nb-radio-group formControlName="sex">
               <nb-radio value="male">Male</nb-radio>
               <nb-radio value="female">Female</nb-radio>
             </nb-radio-group>
@@ -165,3 +165,168 @@
     </nb-card-footer>
   </nb-card>
 </form>
+
+
+
+
+<!-- Dialogue ref -->
+<style>
+  .result-image {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .result-message-text {
+    color: #00D68D;
+    text-align: center;
+    font-weight: bold;
+    padding: 30px 0px;
+  }
+
+  .danger-tips-title{
+    text-align: center;
+  }
+  .result-message-text .danger-message{
+    color: #ff5758;
+    
+  }
+
+  .danger-tips-msg{
+    border-left: 0.5px solid rgba(0,0,0,0.5);
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .danger-type-msg{
+    text-align: center;
+    
+  }
+
+  .predictor-result {
+    margin-bottom: 40px;
+  }
+
+  .health-predictor-result-container {
+    width: 70vh;
+  }
+</style>
+
+<ng-template #dialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Heart Attack Predictor</nb-card-header>
+    <nb-card-body>
+      <div class="health-predictor-result-container">
+        <div class="predictor-result-success" *ngIf="isHeartOK; else dangerTemplate">
+          <div class="result-title"></div>
+          <div class="result-body">
+            <div class="predictor-result">
+              <div class="result-message">
+                <img src="../../../assets/images/heart-ok.png" alt="" class="result-image">
+                <div class="result-message-text">
+                  Congratulations! You are safe.
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-row row">
+
+                <div class="card-col col-lg-6">
+                  <nb-card accent="info">
+                    <nb-card-header>Cholesterol</nb-card-header>
+                    <nb-card-body></nb-card-body>
+                  </nb-card>
+                </div>
+                <div class="col-lg-6">
+                  <nb-card accent="info">
+                    <nb-card-header>Blood Sugar</nb-card-header>
+                    <nb-card-body></nb-card-body>
+                  </nb-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #dangerTemplate>
+        <div class="predictor-result-danger">
+          <div class="result-title"></div>
+          <div class="result-body">
+            <div class="predictor-result">
+              <div class="result-message">
+                <img src="../../../assets/images/heart-danger.png" alt="" class="result-image">
+                <div class="result-message-text">
+                  <div class="danger-message">
+                    <span>Oh No!!! <br>Please contact a doctor immediately within the next three months.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-row row">
+
+                <div class="card-col col-lg-12">
+                  <nb-card accent="info">                    
+                    <nb-card-body>
+                      <div class="row">
+                        <div class="col col-lg-3"> 
+                          <div class="danger-type-msg">
+                            Cholesterol
+                          </div>
+                        </div>
+                        <div class="col col-lg-9">
+                          <div class="danger-tips-title">
+                            Tips
+                          </div>
+                          <div class="danger-tips-msg">
+                            Many different factors can contribute to high blood cholesterol, including lifestyle factors like smoking,
+                            an unhealthy diet and lack of exercise, as well as having an underlying condition, such as high blood pressure or diabetes.
+                          </div>
+                        </div>
+                      </div>
+                    </nb-card-body>
+                  </nb-card>
+                </div>
+
+                <div class="col-lg-12">
+                  <nb-card accent="info">
+                    <nb-card-body>
+
+                      <div class="row">
+                        <div class="col col-lg-3"> 
+                          <div class="danger-type-msg">
+                            Blood Sugar
+                          </div>
+                        </div>
+                        <div class="col col-lg-9">
+                          <div class="danger-tips-msg">
+                            Tips
+                          </div>
+                          <div class="danger-tips-msg">
+                            Carbohydrates: Eating food containing too much carbohydrates, a form of sugar.
+                            The body of a person with diabetes cannot process high levels of carbohydrates fast enough to convert it into energy.
+                            Blood sugar levels in patients with diabetes can rise within hours after eating.
+                          </div>
+                        </div>
+                      </div>
+
+                    </nb-card-body>
+                  </nb-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+        {{ data }}
+      </div>
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton (click)="ref.close()">Close Dialog</button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+<button nbButton (click)="open(dialog)">Open Dialog</button>
+
