@@ -1,0 +1,73 @@
+
+[
+    {
+        "date":"Mon",
+        "value": 120,
+        "delta" : {
+            "up" :true,
+            "value": 13
+        },
+        "comparison": {
+            "prevDate" : "Sun",
+            "prevValue" : 37,
+            "nextDate" : "Mon",
+            "nextValue": 53
+        }
+    },
+    {
+        "date":"Tue",
+        "value": 102,
+        "delta" : {
+            "up" :true,
+            "value": 16
+        },
+        "comparison": {
+            "prevDate" : "Mon",
+            "prevValue" : 27,
+            "nextDate" : "Tue",
+            "nextValue": 16
+        }
+    },
+    {
+        "date":"Wed",
+        "value": 180,
+        "delta" : {
+            "up" :false,
+            "value": 90
+        },
+        "comparison": {
+            "prevDate" : "Tue",
+            "prevValue" : 37,
+            "nextDate" : "Wed",
+            "nextValue": 53
+        }
+    },
+    {
+        "date":"Thu",
+        "value": 90,
+        "delta" : {
+            "up" :true,
+            "value": 12
+        },
+        "comparison": {
+            "prevDate" : "Wed",
+            "prevValue" : 37,
+            "nextDate" : "Thu",
+            "nextValue": 34
+        }
+    },
+    {
+        "date":"Fri",
+        "value": 119,
+        "delta" : {
+            "up" :true,
+            "value": 56
+        },
+        "comparison": {
+            "prevDate" : "Thu",
+            "prevValue" : 78,
+            "nextDate" : "Fri",
+            "nextValue": 90
+        }
+    }
+]

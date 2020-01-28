@@ -9,13 +9,13 @@
             "up": true,
             "symptomPrediction" :[
                 {
-                    "timeStamp": "2020-01-01 18:34:44 00:00",
+                    "timeStamp": "2020-01-01",
                     "symptomValue" :34
                 },
 
                 {
                     "timeStamp": "2020-01-02",
-                    "symptomValue" :22
+                    "symptomValue" :62
                 },
                 {
                     "timeStamp": "2020-01-03",
@@ -24,11 +24,11 @@
 
                 {
                     "timeStamp": "2020-01-05",
-                    "symptomValue" :22
+                    "symptomValue" :45
                 },
                 {
                     "timeStamp": "2020-01-06",
-                    "symptomValue" :56
+                    "symptomValue" :72
                 },
                 {
                     "timeStamp": "2020-01-07",
@@ -48,7 +48,30 @@
                 },
                 {
                     "timeStamp": "2020-01-11",
-                    "symptomValue" :56
+                    "symptomValue" :45
+                },
+                {
+                    "timeStamp": "2020-01-12",
+                    "symptomValue" :36
+                },
+                {
+                    "timeStamp": "2020-01-12",
+                    "symptomValue" :45
+                },
+                {
+                    "timeStamp": "2020-01-14",
+                    "symptomValue" :21
+                }, {
+                    "timeStamp": "2020-01-15",
+                    "symptomValue" :87
+                },
+                {
+                    "timeStamp": "2020-01-16",
+                    "symptomValue" :33
+                },
+                {
+                    "timeStamp": "2020-01-17",
+                    "symptomValue" :65
                 }
             ]
             
