@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HealthPredictorService } from '../../services/health-predictor/health-predictor.service';
+import { NbDialogService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-health-predictor',
@@ -10,9 +12,13 @@ export class HealthPredictorComponent implements OnInit {
   items;
   checkoutForm; 
   submitted = false;
+  isHeartOK: Boolean;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.checkoutForm = this.formBuilder.group({      
+  @ViewChild('dialog', {static: false}) resultDialog;
+
+  constructor(private dialogService: NbDialogService, private formBuilder: FormBuilder,
+     private healthPredictor: HealthPredictorService) {
+    this.checkoutForm = this.formBuilder.group({
       age: ['', Validators.required],
       sex: ['', Validators.required],
       cp: ['', Validators.required],
@@ -32,18 +38,22 @@ export class HealthPredictorComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(predictionData) {
-    // Process checkout data here
-    console.warn('Your form has been submitted', predictionData);
-
+  onSubmit() {
     this.submitted = true;
 
     this.checkoutForm.reset();
+
+    this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {
+      if (response.Status === 200) {
+        this.dialogService.open(this.resultDialog, { hasScroll: true });
+        this.isHeartOK = !!response.Result;
+      }
+    });
+
     // stop here if form is invalid
     if (this.checkoutForm.invalid) {
         return;
     }
-    
   }
 
   // convenience getter for easy access to form fields

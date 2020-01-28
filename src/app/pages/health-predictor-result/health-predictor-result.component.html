@@ -38,6 +38,10 @@
   .health-predictor-result-container {
     width: 70vh;
   }
+
+  .nb-dialog-container{
+    overflow: scroll;
+  }
 </style>
 
 <ng-template #dialog let-data let-ref="dialogRef">
@@ -109,8 +113,8 @@
                             Tips
                           </div>
                           <div class="danger-tips-msg">
-                            Many different factors can contribute to high blood cholesterol, including lifestyle factors like smoking,
-                            an unhealthy diet and lack of exercise, as well as having an underlying condition, such as high blood pressure or diabetes.
+                            High Blood Cholesterol can be caused due to factors like smoking, an unhealthy diet and lack of exercise,
+                            as well as having an underlying condition, such as high blood pressure or diabetes.
                           </div>
                         </div>
                       </div>
@@ -124,17 +128,16 @@
 
                       <div class="row">
                         <div class="col col-lg-3"> 
-                          <div class="danger-type-msg">
+                          <div class="danger-tips-title">
                             Blood Sugar
                           </div>
                         </div>
                         <div class="col col-lg-9">
-                          <div class="danger-tips-msg">
+                          <div class="danger-tips-title">
                             Tips
                           </div>
                           <div class="danger-tips-msg">
-                            Carbohydrates: Eating food containing too much carbohydrates, a form of sugar.
-                            The body of a person with diabetes cannot process high levels of carbohydrates fast enough to convert it into energy.
+                            Carbohydrates: Eating food containing too much carbohydrates, a form of sugar.                            
                             Blood sugar levels in patients with diabetes can rise within hours after eating.
                           </div>
                         </div>
@@ -158,27 +161,3 @@
 </ng-template>
 <button nbButton (click)="open(dialog)">Open Dialog</button>
 
-<div>Heart Attack Predictor</div>
-
-<div class="health-predictor-result-container">
-  <div class="result-danger">
-    <div class="danger-message">
-      <span>Oh No!!! <br>Please contact a doctor immediately within the next three months.</span>
-    </div>
-
-    <div> Findings</div>
-
-    <div>
-      <div class="cholesterol-tip-card">
-        <div>
-          <span>Cholesterol</span>
-          <hr>
-        </div>
-      </div>
-      <div class="blood-sugar-tip-card">
-        <span>Blood Sugar</span>
-        <hr>
-      </div>
-    </div>
-  </div>
-</div>

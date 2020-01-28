@@ -21,6 +21,10 @@
     ],
     "plugins": [
       { "name": "tslint-language-service"}
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@environment": ["src/environments/environment.ts"]
+    }
   }
 }
