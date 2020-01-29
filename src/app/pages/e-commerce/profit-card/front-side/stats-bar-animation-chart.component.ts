@@ -79,7 +79,7 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
         backgroundColor: chartVariables.tooltipBg,
         borderColor: chartVariables.tooltipBorderColor,
         borderWidth: chartVariables.tooltipBorderWidth,
-        formatter: params => `$ ${Math.round(parseInt(params.value, 10))}`,
+        formatter: params => `${Math.round(parseInt(params.value, 10))}`,
         extraCssText: chartVariables.tooltipExtraCss,
       },
       xAxis: [

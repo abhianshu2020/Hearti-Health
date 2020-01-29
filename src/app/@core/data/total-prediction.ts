@@ -1,8 +1,9 @@
 export interface TotalPrediction
 {
-    ageBelowThirty: boolean, 
-    male: boolean, 
-    internal: string,
-    up: boolean,
-    variation: number
+    ageBelowThirty: boolean; 
+    male: boolean ;
+    internal: string ;
+    totalPrediction: number ;
+    up: boolean ;
+    variation: number;
 } 

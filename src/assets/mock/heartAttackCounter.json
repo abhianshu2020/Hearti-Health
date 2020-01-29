@@ -1,31 +1,36 @@
 
    [
     {
-        "interval" :"Jan",
+        "interval" :"Sun",
         "predicted" : 102,
         "cured" :33
     },
     {
-       "interval" :"Feb",
+       "interval" :"Tues",
        "predicted" : 23,
-       "cured" :3
+       "cured" :10
    },
    {
-       "interval" :"Mar",
+       "interval" :"Wed",
        "predicted" : 56,
-       "cured" :6
+       "cured" :14
    },
    {
-       "interval" :"Apr",
+       "interval" :"Thurs",
        "predicted" : 74,
-       "cured" :7
+       "cured" :17
    },
    {
-       "interval" :"May",
+       "interval" :"Fri",
        "predicted" : 90,
        "cured" :34
-   }        
-       
+   }   ,
+   {
+    "interval" :"sat",
+    "predicted" : 160,
+    "cured" :67
+}
+
         
    
     

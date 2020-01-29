@@ -10,36 +10,89 @@
             "symptomPrediction" :[
                 {
                     "timeStamp": "2020-01-01",
-                    "symptomValue" :1
+                    "symptomValue" :34
                 },
 
                 {
                     "timeStamp": "2020-01-02",
-                    "symptomValue" :1
+                    "symptomValue" :62
                 },
                 {
                     "timeStamp": "2020-01-03",
-                    "symptomValue" :1
+                    "symptomValue" :56
+                },
+
+                {
+                    "timeStamp": "2020-01-05",
+                    "symptomValue" :45
+                },
+                {
+                    "timeStamp": "2020-01-06",
+                    "symptomValue" :72
+                },
+                {
+                    "timeStamp": "2020-01-07",
+                    "symptomValue" :22
+                },
+                {
+                    "timeStamp": "2020-01-08",
+                    "symptomValue" :56
+                },
+                {
+                    "timeStamp": "2020-01-09",
+                    "symptomValue" :90
+                },
+                {
+                    "timeStamp": "2020-01-10",
+                    "symptomValue" :22
+                },
+                {
+                    "timeStamp": "2020-01-11",
+                    "symptomValue" :45
+                },
+                {
+                    "timeStamp": "2020-01-12",
+                    "symptomValue" :36
+                },
+                {
+                    "timeStamp": "2020-01-12",
+                    "symptomValue" :45
+                },
+                {
+                    "timeStamp": "2020-01-14",
+                    "symptomValue" :21
+                }, {
+                    "timeStamp": "2020-01-15",
+                    "symptomValue" :87
+                },
+                {
+                    "timeStamp": "2020-01-16",
+                    "symptomValue" :33
+                },
+                {
+                    "timeStamp": "2020-01-17",
+                    "symptomValue" :65
                 }
             ]
+            
         },
         {
             "symptomType" : "BloodSugar",
             "todayPredictionsymptomValue" : 21,
-            "variation" : 4 ,
-            "up": true,
+            "variation" : 6 ,
+            "up": false,
             "symptomPrediction" :[
                 {
                     "timeStamp": "2020-01-01",
-                    "symptomValue" :1
+                    "symptomValue" :14
                 },
                 {
-                    "timeStamp": "2020-01-02",
-                    "symptomValue" :1
+                    "timeStamp": "2020-03-02",
+                    "symptomValue" :189
                 },
                 {
-                    "timeStamp": "2020-01-03",
-                    "symptomValue" :1
+                    "timeStamp": "2020-03-03",
+                    "symptomValue" :90
                 }
             ]
         },

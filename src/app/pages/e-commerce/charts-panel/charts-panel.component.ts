@@ -52,6 +52,11 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
     }
   }
 
+  getAgePredictonChartData(period : string)
+  {
+    
+  }
+
   getOrdersChartData(period: string) {
     this.ordersProfitChartService.getOrdersChartData(period)
       .pipe(takeWhile(() => this.alive))
