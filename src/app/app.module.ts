@@ -21,6 +21,9 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbInputModule,
+  NbCardModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { PLoginComponent } from './auth/p-login/p-login.component';
 import { PRegisterComponent } from './auth/p-register/p-register.component';
@@ -32,6 +35,9 @@ import { PRegisterComponent } from './auth/p-register/p-register.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    NbInputModule,
+    NbCardModule,
+    NbButtonModule,
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({
@@ -55,7 +61,7 @@ import { PRegisterComponent } from './auth/p-register/p-register.component';
         }),
       ],
       forms: {},
-    }), 
+    }),
     ThemeModule.forRoot(),
 
     NbSidebarModule.forRoot(),

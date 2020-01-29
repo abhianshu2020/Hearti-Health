@@ -41,19 +41,21 @@ export class HealthPredictorComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    this.checkoutForm.reset();
+     // stop here if form is invalid
+    if (this.checkoutForm.invalid) {
+      return;
+  }
 
     this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {
       if (response.Status === 200) {
         this.dialogService.open(this.resultDialog, { hasScroll: true });
         this.isHeartOK = !!response.Result;
+        alert(this.isHeartOK);
       }
     });
-
-    // stop here if form is invalid
-    if (this.checkoutForm.invalid) {
-        return;
-    }
+    this.checkoutForm.reset();
+   
+    
   }
 
   // convenience getter for easy access to form fields

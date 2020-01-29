@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NbMenuModule, NbCardModule, NbButtonModule, NbInputModule, NbRadioModule,
-  NbDialogModule } from '@nebular/theme';
+  NbDialogModule, 
+  NbTooltipModule} from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -11,7 +12,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HealthPredictorResultComponent } from './health-predictor-result/health-predictor-result.component';
-import { PLoginComponent } from './p-login/p-login.component';
+
 
 @NgModule({
   imports: [
@@ -25,16 +26,15 @@ import { PLoginComponent } from './p-login/p-login.component';
     NbButtonModule,
     NbInputModule,
     NbRadioModule,
+    NbTooltipModule,
     FormsModule,
     ReactiveFormsModule,
     NbDialogModule.forRoot(),
-    
   ],
   declarations: [
     PagesComponent,
     HealthPredictorComponent,
     HealthPredictorResultComponent,
-    PLoginComponent,
   ],
 })
 export class PagesModule {

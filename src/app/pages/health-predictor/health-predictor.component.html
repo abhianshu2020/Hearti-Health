@@ -49,8 +49,10 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="age" class="label">Age</label>
-            <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
+            <label for="age" class="label">
+              Age              
+            </label>
+            <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age" required>
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">Age is required</div>
             </div>
@@ -79,7 +81,10 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="trestbps" class="label">Blood Pressure Level</label>
+            <label for="trestbps" class="label">
+              Blood Pressure Level
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="trestbps">
           </div>
         </div>
@@ -88,29 +93,41 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="chol" class="label">Cholesterol Level</label>
+            <label for="chol" class="label">
+              Cholesterol Level
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="Ex: 323" formControlName="chol">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="fbs" class="label">Fasting Blood Sugar Level</label>
+            <label for="fbs" class="label">
+              Fasting Blood Sugar Level
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="Text field" formControlName="fbs">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="" class="label">Resting Electrocardiographic</label>
+            <label for="" class="label">
+              Resting Electrocardiographic
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="restecg" formControlName="restecg">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="" class="label">Maximum Heart Rate Achieved</label>
-            <input type="text" nbInput fullWidth placeholder="thalach" formControlName="thalach">
+            <label for="" class="label">
+              Maximum Heart Rate Achieved
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
+            <input type="text" nbInput fullWidth placeholder="323" formControlName="thalach">
           </div>
         </div>
       </div>
@@ -119,7 +136,10 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="exang" class="label block-label">Excercise includes Angina</label>
+            <label for="exang" class="label block-label">
+              Excercise includes Angina
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <nb-radio-group name="exang">
               <nb-radio value="yes">Yes</nb-radio>
               <nb-radio value="no">No</nb-radio>
@@ -129,21 +149,30 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="oldpeak" class="label">Depression induced by exercise</label>
+            <label for="oldpeak" class="label">
+              Depression induced by exercise
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="slope" class="label">Slope of the peak exercise</label>
+            <label for="slope" class="label">
+              Slope of the peak exercise
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="ca" class="label">Vessels colored by flouoroscopy</label>
+            <label for="ca" class="label">
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              Vessels colored by flouoroscopy
+            </label>
             <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca">
           </div>
         </div>
@@ -152,7 +181,10 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="thal" class="label">Thalassemia Level</label>
+            <label for="thal" class="label">
+              Thalassemia Level
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+            </label>
             <input type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect"
               formControlName="thal">
           </div>
@@ -328,5 +360,4 @@
     </nb-card-footer>
   </nb-card>
 </ng-template>
-<button nbButton (click)="open(dialog)">Open Dialog</button>
 
