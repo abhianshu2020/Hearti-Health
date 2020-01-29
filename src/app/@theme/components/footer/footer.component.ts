@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   // TODO: Add Social Media Links for twitter and linked in.
   // Classes required: 'ion ion-social-twitter','ion ion-social-linkedin'
   template: `
-    <span class="created-by">&copy; <b><a href="#" target="_blank">SkillAssure</a></b> 2020</span>
+    <span class="created-by"></span>
     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>
       <a href="#" target="_blank" class="ion ion-social-facebook"></a>
