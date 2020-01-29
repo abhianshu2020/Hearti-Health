@@ -1,30 +1,3 @@
-<!-- <style>
-.health-predictor-container{
-  background: white;
-  box-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, 0.1);
-}
-</style>
-
-<div class="health-predictor-container">
-  <div class="health-predictor-header">
-    <div class="health-predictor-title">
-      <h2>Heart Attack Predictor</h2>
-    </div> 
-  </div>
-  <hr />
-  <div class="health-predictor-body">
-    <div class="body-content">
-      body content
-    </div>
-  </div>
-  <hr />
-  <div class="health-predictor-footer">
-    <div class="footer-content">
-      <button class="appearance-hero size-medium status-primary shape-rectangle ng-star-inserted transitions">Calculate Now</button>
-    </div>
-  </div>
-</div> -->
-
 <style>
   .block-label {
     display: block;
@@ -34,6 +7,7 @@
     display: inline;
   }
 </style>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <nb-card>
     <nb-card-header>
@@ -52,7 +26,7 @@
             <label for="age" class="label">
               Age              
             </label>
-            <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age" required>
+            <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">Age is required</div>
             </div>
@@ -220,7 +194,9 @@
     text-align: center;
   }
   .result-message-text .danger-message{
-    color: #ff5758;
+    font-weight: bold;
+    color: black;
+    padding: 20px 0px;
     
   }
 
@@ -242,7 +218,13 @@
   .health-predictor-result-container {
     width: 70vh;
   }
+
+  .nb-dialog-container{
+    overflow: scroll;
+  }
 </style>
+
+
 
 <ng-template #dialog let-data let-ref="dialogRef">
   <nb-card>
@@ -266,14 +248,30 @@
 
                 <div class="card-col col-lg-6">
                   <nb-card accent="info">
-                    <nb-card-header>Cholesterol</nb-card-header>
-                    <nb-card-body></nb-card-body>
+                    <nb-card-header >
+                      <div style="text-align: center;">
+                        Cholesterol
+                      </div>
+                    </nb-card-header>
+                    <nb-card-body>
+                      <div style="text-align: center;">
+                        174
+                      </div>
+                    </nb-card-body>
                   </nb-card>
                 </div>
                 <div class="col-lg-6">
                   <nb-card accent="info">
-                    <nb-card-header>Blood Sugar</nb-card-header>
-                    <nb-card-body></nb-card-body>
+                    <nb-card-header>
+                      <div style="text-align: center;">
+                        Blood Sugar
+                      </div>
+                    </nb-card-header>
+                    <nb-card-body>
+                      <div style="text-align: center;">
+                        120
+                      </div>
+                    </nb-card-body>
                   </nb-card>
                 </div>
               </div>
@@ -286,11 +284,15 @@
           <div class="result-title"></div>
           <div class="result-body">
             <div class="predictor-result">
-              <div class="result-message">
-                <img src="../../../assets/images/heart-danger.png" alt="" class="result-image">
+              <div class="result-message">               
                 <div class="result-message-text">
                   <div class="danger-message">
-                    <span>Oh No!!! <br>Please contact a doctor immediately within the next three months.</span>
+                    <span> We suggest you to have a consultation with a cardiologist at the earliest.</span>
+                  </div>
+                  <div class="appointment-btn">
+
+                    <!-- TODO: Add a button below to Book and Appointment with Doctor -->
+                    <button nbButton size="medium" shape="semi-round">Book Appointment Now</button>
                   </div>
                 </div>
               </div>
@@ -313,8 +315,8 @@
                             Tips
                           </div>
                           <div class="danger-tips-msg">
-                            Many different factors can contribute to high blood cholesterol, including lifestyle factors like smoking,
-                            an unhealthy diet and lack of exercise, as well as having an underlying condition, such as high blood pressure or diabetes.
+                            High Blood Cholesterol can be caused due to factors like smoking, an unhealthy diet and lack of exercise,
+                            as well as having an underlying condition, such as high blood pressure or diabetes.
                           </div>
                         </div>
                       </div>
@@ -328,17 +330,16 @@
 
                       <div class="row">
                         <div class="col col-lg-3"> 
-                          <div class="danger-type-msg">
+                          <div class="danger-tips-title">
                             Blood Sugar
                           </div>
                         </div>
                         <div class="col col-lg-9">
-                          <div class="danger-tips-msg">
+                          <div class="danger-tips-title">
                             Tips
                           </div>
                           <div class="danger-tips-msg">
-                            Carbohydrates: Eating food containing too much carbohydrates, a form of sugar.
-                            The body of a person with diabetes cannot process high levels of carbohydrates fast enough to convert it into energy.
+                            Carbohydrates: Eating food containing too much carbohydrates, a form of sugar.                            
                             Blood sugar levels in patients with diabetes can rise within hours after eating.
                           </div>
                         </div>
@@ -352,12 +353,10 @@
           </div>
         </div>
       </ng-template>
-        {{ data }}
       </div>
     </nb-card-body>
     <nb-card-footer>
-      <button nbButton (click)="ref.close()">Close Dialog</button>
+      <button nbButton (click)="ref.close()">Close</button>
     </nb-card-footer>
   </nb-card>
 </ng-template>
-

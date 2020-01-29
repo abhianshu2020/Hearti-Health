@@ -14,6 +14,7 @@ export class HealthPredictorComponent implements OnInit {
   submitted = false;
   isHeartOK: Boolean;
 
+
   @ViewChild('dialog', {static: false}) resultDialog;
 
   constructor(private dialogService: NbDialogService, private formBuilder: FormBuilder,
@@ -41,18 +42,13 @@ export class HealthPredictorComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-     // stop here if form is invalid
-    if (this.checkoutForm.invalid) {
-      return;
-  }
-
-    this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {
+     this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {      
       if (response.Status === 200) {
         this.dialogService.open(this.resultDialog, { hasScroll: true });
         this.isHeartOK = !!response.Result;
-        alert(this.isHeartOK);
-      }
+        }
     });
+
     this.checkoutForm.reset();
    
     
