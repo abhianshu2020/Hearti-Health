@@ -26,6 +26,8 @@
             <label for="age" class="label">
               Age              
             </label>
+            <!-- TODO: Add a tootip for Age  -->
+            <!-- TODO: Make age a number field -->
             <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">Age is required</div>
@@ -293,9 +295,9 @@
                     <span> We suggest you to have a consultation with a cardiologist at the earliest.</span>
                   </div>
                   <div class="appointment-btn">
-
+                    
                     <!-- TODO: Add a button below to Book and Appointment with Doctor -->
-                    <button nbButton size="medium" shape="semi-round">Book Appointment Now</button>
+                   
                   </div>
                 </div>
               </div>
@@ -363,3 +365,9 @@
     </nb-card-footer>
   </nb-card>
 </ng-template>
+
+<!-- <button nbButton size="medium" shape="semi-round">
+  <a href="" style="color:white">
+    Book Appointment                        
+  </a>
+</button> -->
